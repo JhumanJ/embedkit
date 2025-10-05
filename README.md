@@ -27,6 +27,51 @@ if (res.ok) {
 }
 ```
 
+## Examples
+
+### YouTube
+
+- Input:
+
+```text
+https://youtu.be/dQw4w9WgXcQ?t=43
+# also works:
+# https://www.youtube.com/watch?t=43&v=dQw4w9WgXcQ&feature=youtu.be
+```
+
+- Output (resolveEmbed result):
+
+```json
+{
+  "ok": true,
+  "descriptor": {
+    "kind": "iframe",
+    "provider": "youtube",
+    "providerUrl": "https://www.youtube.com",
+    "id": "dQw4w9WgXcQ",
+    "src": "https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0&start=43",
+    "aspectRatio": "16:9",
+    "attrs": {
+      "allow": "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+      "sandbox": "allow-scripts allow-same-origin allow-presentation allow-popups",
+      "referrerpolicy": "strict-origin-when-cross-origin",
+      "loading": "lazy",
+      "allowfullscreen": true
+    },
+    "csp": {
+      "frameSrc": [
+        "https://www.youtube.com",
+        "https://www.youtube-nocookie.com"
+      ]
+    },
+    "raw": {
+      "url": "https://youtu.be/dQw4w9WgXcQ?t=43",
+      "matchedPattern": "youtu.be"
+    }
+  }
+}
+```
+
 ## Why this is useful
 
 - **Paste a URL, get an embed**: Users don’t need to know about provider-specific embed URLs or `<iframe>` parameters. They paste a link; you render the right thing.
