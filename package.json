@@ -9,12 +9,12 @@
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/embedkit.git"
+    "url": "git+https://github.com/JhumanJ/embedkit.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/embedkit/issues"
+    "url": "https://github.com/JhumanJ/embedkit/issues"
   },
-  "homepage": "https://github.com/your-org/embedkit#readme",
+  "homepage": "https://github.com/JhumanJ/embedkit#readme",
   "exports": {
     ".": {
       "import": "./dist/index.js",
