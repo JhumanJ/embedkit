@@ -31,6 +31,13 @@ import gdrive from "./gdrive.js";
 import file from "./file.js";
 import image from "./image.js";
 import bandcamp from "./bandcamp.js";
+import rumble from "./rumble.js";
+import bilibili from "./bilibili.js";
+import mux from "./mux.js";
+import cloudflareStream from "./cloudflare-stream.js";
+import vidyard from "./vidyard.js";
+import brightcove from "./brightcove.js";
+import jwplayer from "./jwplayer.js";
 
 // Ensure they're retained (some bundlers treeshake imports if unused)
 registerAdapter(yt);
@@ -51,6 +58,13 @@ registerAdapter(gdrive);
 registerAdapter(file);
 registerAdapter(image);
 registerAdapter(bandcamp);
+registerAdapter(rumble);
+registerAdapter(bilibili);
+registerAdapter(mux);
+registerAdapter(cloudflareStream);
+registerAdapter(vidyard);
+registerAdapter(brightcove);
+registerAdapter(jwplayer);
 
 export { registry };
 

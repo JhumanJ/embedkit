@@ -1,5 +1,7 @@
 # EmbedKit
 
+[![npm version](https://img.shields.io/npm/v/embedkit.svg)](https://www.npmjs.com/package/embedkit)
+
 Transform a user URL into a normalized embed JSON descriptor — no network calls, no SDKs. Works in Node and browsers. TypeScript-first.
 
 ## Install

@@ -137,4 +137,54 @@ test("Image direct", () => {
   assert.equal(r.descriptor.kind, "image");
 });
 
+test("Rumble", () => {
+  const r = resolveEmbed("https://rumble.com/vabc123-something.html");
+  ok(r);
+  assert.equal(r.descriptor.provider, "rumble");
+  assert.match(r.descriptor.src, /rumble\.com\/embed\/vabc123/);
+});
+
+test("Bilibili BV", () => {
+  const r = resolveEmbed("https://www.bilibili.com/video/BV1xx411c7mD");
+  ok(r);
+  assert.equal(r.descriptor.provider, "bilibili");
+  assert.match(r.descriptor.src, /player\.bilibili\.com\/player\.html\?bvid=/);
+});
+
+test("Mux HLS", () => {
+  const r = resolveEmbed("https://stream.mux.com/abc123.m3u8");
+  ok(r);
+  assert.equal(r.descriptor.kind, "video");
+  assert.equal(r.descriptor.provider, "file");
+  assert.equal(r.descriptor.params?.["hls"], true);
+});
+
+test("Cloudflare Stream iframe", () => {
+  const r = resolveEmbed("https://iframe.videodelivery.net/abcdef");
+  ok(r);
+  assert.equal(r.descriptor.provider, "cloudflare-stream");
+  assert.match(r.descriptor.src, /iframe\.videodelivery\.net\/abcdef/);
+});
+
+test("Vidyard", () => {
+  const r = resolveEmbed("https://share.vidyard.com/watch/abcd1234");
+  ok(r);
+  assert.equal(r.descriptor.provider, "vidyard");
+  assert.match(r.descriptor.src, /play\.vidyard\.com\/abcd1234\.html/);
+});
+
+test("Brightcove", () => {
+  const r = resolveEmbed("https://players.brightcove.net/123456789/default_default/index.html?videoId=ref:myVideo");
+  ok(r);
+  assert.equal(r.descriptor.provider, "brightcove");
+  assert.match(r.descriptor.src, /players\.brightcove\.net\/123456789/);
+});
+
+test("JW Player hosted", () => {
+  const r = resolveEmbed("https://cdn.jwplayer.com/players/abcd1234-xyz987.html");
+  ok(r);
+  assert.equal(r.descriptor.provider, "jwplayer");
+  assert.match(r.descriptor.src, /cdn\.jwplayer\.com\/players\/abcd1234-xyz987\.html/);
+});
+
 
