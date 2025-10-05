@@ -1,0 +1,43 @@
+{
+  "name": "embedkit",
+  "version": "0.1.0",
+  "description": "Transform a URL into a normalized embed JSON descriptor (no network)",
+  "keywords": ["embed", "oembed", "iframe", "video", "audio", "url", "parser"],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/embedkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/embedkit/issues"
+  },
+  "homepage": "https://github.com/your-org/embedkit#readme",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepare": "npm run build",
+    "test": "node --test dist/test/**/*.test.js",
+    "pretest": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "typescript": "^5.6.3"
+  }
+}
+
