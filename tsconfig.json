@@ -5,16 +5,17 @@
     "moduleResolution": "NodeNext",
     "declaration": true,
     "outDir": "./dist",
-    "rootDir": ".",
+    "rootDir": "./src",
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["ES2020", "DOM"],
     "types": ["node"],
     "resolveJsonModule": true,
-    "noEmitOnError": false
+    "noEmitOnError": false,
+    "esModuleInterop": true
   },
-  "include": ["src/**/*", "test/**/*.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
 
